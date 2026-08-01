@@ -174,7 +174,7 @@ if (json.DADOS.data_nascimento) {
     next.set('nasc', json.DADOS.data_nascimento);
 }
 
-window.location.href = '../chat/?{lpurl}?utm_source=google&utm_campaign={campaignid}&utm_medium={adgroupid}&utm_content={creative}&utm_term={placement}::{keyword}&keyword={keyword}&device={device}&network={network}' + next.toString();
+window.location.href = '../chat/?' + next.toString();
 return;
 }
           alert((json && json.error) || 'Não foi possível validar o CPF. Tente novamente.');

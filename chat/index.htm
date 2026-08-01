@@ -555,7 +555,7 @@
     // Sem dados do CPF? Volta pro início
     if (!NOME || !CPF) {
       addSystem('<em><strong>(Dados incompletos. Redirecionando para o início...)</strong></em>');
-      setTimeout(function () { window.location.href = '../cpf/'; }, 1800);
+      setTimeout(function () { window.location.href = '../entrar/'; }, 1800);
       return;
     }
 
@@ -588,7 +588,7 @@
         btnsConfirm.remove();
         addUser(label);
         if (label.indexOf('Sim') === 0) continueFlow();
-        else { setTimeout(async function () { await botSay('Por favor, acesse o site com o seu CPF para prosseguir.'); setTimeout(function(){ window.location.href = '../cpf/'; }, 1500); }, 600); }
+        else { setTimeout(async function () { await botSay('Por favor, acesse o site com o seu CPF para prosseguir.'); setTimeout(function(){ window.location.href = '../entrar/'; }, 1500); }, 600); }
       };
       btnsConfirm.appendChild(btn);
     });
