@@ -10,221 +10,541 @@
   ></script>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Desenrola Brasil</title>
-  <link rel="stylesheet" href="css/style.css">
+  <meta name="theme-color" content="#0b3d91">
+  <title>Portal de Negociação — Boas-vindas</title>
   <style>
-    body {
-      min-height: 100vh;
-      background: #ececec;
+    :root {
+      --blue-950: #071c42;
+      --blue-900: #0b2f6b;
+      --blue-800: #0b3d91;
+      --blue-700: #1451b4;
+      --blue-100: #e9f1ff;
+      --blue-50: #f4f8ff;
+      --green: #168821;
+      --ink: #172238;
+      --muted: #5f6b7c;
+      --line: #dce4ef;
+      --white: #fff;
     }
 
-    .access-page {
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      min-width: 320px;
+      background: #edf2f8;
+    }
+
+    body {
+      min-height: 100vh;
+      color: var(--ink);
+      background: #edf2f8;
+      font-family: "Segoe UI", Arial, Helvetica, sans-serif;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .page {
       min-height: 100vh;
       display: flex;
       flex-direction: column;
     }
 
-    .access-header {
-      min-height: 74px;
+    .topbar {
+      position: relative;
+      z-index: 2;
+      min-height: 76px;
       display: flex;
       align-items: center;
       justify-content: center;
-      padding: 18px 24px;
-      background: #fff;
-      border-bottom: 1px solid #dfe3eb;
-      box-shadow: 0 2px 8px rgba(20, 81, 180, 0.08);
+      padding: 14px 24px;
+      background: var(--white);
+      border-bottom: 1px solid rgba(11, 61, 145, 0.12);
+      box-shadow: 0 3px 16px rgba(15, 43, 83, 0.06);
     }
 
-    .access-brand {
-      display: flex;
-      align-items: center;
-      justify-content: center;
+    .brand-mark {
+      width: 46px;
+      height: 52px;
+      display: block;
+      object-fit: contain;
     }
 
-    .access-brand-icon {
-      width: 48px;
-      height: auto;
-    }
-
-    .access-main {
+    .main {
+      position: relative;
       flex: 1;
       display: grid;
       place-items: center;
-      padding: 42px 20px;
-      background:
-        radial-gradient(circle at 12% 15%, rgba(19, 81, 180, 0.12), transparent 28%),
-        radial-gradient(circle at 88% 85%, rgba(20, 113, 180, 0.1), transparent 30%),
-        #f3f5f8;
+      isolation: isolate;
+      overflow: hidden;
+      padding: 48px 24px;
     }
 
-    .access-card {
-      width: 100%;
-      max-width: 570px;
-      padding: 42px 38px 38px;
-      text-align: center;
-      background: #fff;
-      border: 1px solid #e1e6ef;
-      border-radius: 16px;
-      box-shadow: 0 12px 34px rgba(28, 54, 92, 0.12);
-    }
-
-    .security-icon {
-      width: 68px;
-      height: 68px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 22px;
-      color: #fff;
-      background: #1451b4;
+    .main::before,
+    .main::after {
+      position: absolute;
+      z-index: -1;
+      width: 420px;
+      height: 420px;
+      content: "";
       border-radius: 50%;
-      box-shadow: 0 7px 18px rgba(20, 81, 180, 0.25);
+      filter: blur(2px);
     }
 
-    .access-card h1 {
-      margin-bottom: 12px;
-      color: #174ea6;
-      font-size: 28px;
-      line-height: 1.25;
+    .main::before {
+      top: -230px;
+      right: -130px;
+      background: rgba(20, 81, 180, 0.12);
     }
 
-    .access-card p {
-      max-width: 430px;
-      margin: 0 auto 28px;
-      color: #4b5563;
+    .main::after {
+      bottom: -280px;
+      left: -160px;
+      background: rgba(22, 136, 33, 0.08);
+    }
+
+    .access-shell {
+      width: min(1120px, 100%);
+      min-height: 570px;
+      display: grid;
+      grid-template-columns: minmax(0, 1.08fr) minmax(390px, 0.92fr);
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid rgba(11, 61, 145, 0.12);
+      border-radius: 24px;
+      box-shadow: 0 24px 70px rgba(21, 48, 86, 0.16);
+    }
+
+    .presentation {
+      position: relative;
+      min-height: 570px;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      overflow: hidden;
+      padding: 46px;
+      color: var(--white);
+      background: var(--blue-900);
+    }
+
+    .presentation::before {
+      position: absolute;
+      inset: 0;
+      content: "";
+      background:
+        linear-gradient(180deg, rgba(7, 28, 66, 0.12) 10%, rgba(7, 28, 66, 0.92) 88%),
+        url("images/hero.png") center top / auto 62% no-repeat,
+        linear-gradient(135deg, var(--blue-700), var(--blue-950));
+    }
+
+    .presentation::after {
+      position: absolute;
+      top: 30px;
+      left: 34px;
+      width: 74px;
+      height: 5px;
+      content: "";
+      background: #ffcd07;
+      border-radius: 999px;
+    }
+
+    .presentation-content {
+      position: relative;
+      z-index: 1;
+      max-width: 520px;
+    }
+
+    .presentation-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 16px;
+      color: #dfeaff;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .presentation-kicker::before {
+      width: 8px;
+      height: 8px;
+      content: "";
+      background: #5ee06d;
+      border-radius: 50%;
+      box-shadow: 0 0 0 5px rgba(94, 224, 109, 0.15);
+    }
+
+    .presentation h1 {
+      max-width: 470px;
+      margin-bottom: 16px;
+      font-size: clamp(31px, 3vw, 46px);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+    }
+
+    .presentation p {
+      max-width: 470px;
+      color: #d7e4f8;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+
+    .verification {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 52px 48px;
+    }
+
+    .step-label {
+      display: inline-flex;
+      align-items: center;
+      align-self: flex-start;
+      gap: 9px;
+      margin-bottom: 26px;
+      padding: 7px 11px;
+      color: var(--blue-800);
+      background: var(--blue-100);
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 750;
+      letter-spacing: 0.045em;
+      text-transform: uppercase;
+    }
+
+    .step-label span {
+      width: 7px;
+      height: 7px;
+      background: var(--blue-700);
+      border-radius: 50%;
+    }
+
+    .verification h2 {
+      margin-bottom: 13px;
+      color: var(--blue-900);
+      font-size: 32px;
+      line-height: 1.17;
+      letter-spacing: -0.025em;
+    }
+
+    .verification-intro {
+      margin-bottom: 28px;
+      color: var(--muted);
       font-size: 16px;
       line-height: 1.55;
     }
 
-    .access-button {
-      width: 100%;
-      min-height: 52px;
+    .check-panel {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      margin-bottom: 24px;
+      padding: 17px 18px;
+      background: var(--blue-50);
+      border: 1px solid #cedcf3;
+      border-radius: 14px;
+    }
+
+    .check-icon {
+      width: 42px;
+      height: 42px;
+      flex: 0 0 auto;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: var(--green);
+      border-radius: 12px;
+    }
+
+    .check-copy strong,
+    .check-copy small {
+      display: block;
+    }
+
+    .check-copy strong {
+      margin-bottom: 3px;
+      color: var(--ink);
+      font-size: 15px;
+    }
+
+    .check-copy small {
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.35;
+    }
+
+    .continue-button {
+      min-height: 54px;
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 14px 24px;
-      color: #fff;
-      background: #1451b4;
-      border-radius: 999px;
+      gap: 12px;
+      padding: 14px 22px;
+      color: var(--white);
+      background: var(--blue-700);
+      border-radius: 12px;
+      box-shadow: 0 8px 22px rgba(20, 81, 180, 0.26);
       font-size: 16px;
-      font-weight: 700;
+      font-weight: 750;
       text-decoration: none;
-      box-shadow: 0 5px 14px rgba(20, 81, 180, 0.24);
-      transition: background-color 0.2s, transform 0.2s, box-shadow 0.2s;
+      transition: transform 0.2s ease, background-color 0.2s ease, box-shadow 0.2s ease;
     }
 
-    .access-button:hover {
-      background: #0c3d8f;
-      transform: translateY(-1px);
-      box-shadow: 0 7px 18px rgba(20, 81, 180, 0.3);
+    .continue-button:hover {
+      background: var(--blue-800);
+      box-shadow: 0 11px 26px rgba(20, 81, 180, 0.32);
+      transform: translateY(-2px);
     }
 
-    .access-note {
+    .continue-button:focus-visible,
+    .footer a:focus-visible {
+      outline: 3px solid rgba(20, 81, 180, 0.35);
+      outline-offset: 3px;
+    }
+
+    .button-arrow {
+      font-size: 20px;
+      line-height: 1;
+      transition: transform 0.2s ease;
+    }
+
+    .continue-button:hover .button-arrow {
+      transform: translateX(3px);
+    }
+
+    .privacy-note {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      margin-top: 18px;
+      color: #788395;
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .privacy-note svg {
+      flex: 0 0 auto;
+      margin-top: 1px;
+      color: var(--blue-700);
+    }
+
+    .footer {
       display: flex;
       align-items: center;
-      justify-content: center;
-      gap: 7px;
-      margin-top: 18px;
-      color: #667085;
+      justify-content: space-between;
+      gap: 24px;
+      padding: 22px max(24px, calc((100vw - 1120px) / 2));
+      color: #657184;
+      background: var(--white);
+      border-top: 1px solid var(--line);
       font-size: 13px;
     }
 
-    .access-footer {
-      padding: 24px 20px;
-      text-align: center;
-      color: #6b7280;
-      background: #fff;
-      border-top: 1px solid #e1e6ef;
-      font-size: 13px;
-    }
-
-    .access-footer-links {
+    .footer-nav {
       display: flex;
-      justify-content: center;
       flex-wrap: wrap;
       gap: 10px 22px;
-      margin-bottom: 10px;
     }
 
-    .access-footer a {
-      color: #1451b4;
-      font-weight: 600;
+    .footer a {
+      color: var(--blue-700);
+      font-weight: 650;
       text-decoration: none;
     }
 
-    .access-footer a:hover {
+    .footer a:hover {
       text-decoration: underline;
     }
 
-    @media (max-width: 560px) {
-      .access-header {
+    @media (max-width: 900px) {
+      .main {
+        padding: 30px 18px;
+      }
+
+      .access-shell {
+        max-width: 680px;
+        grid-template-columns: 1fr;
+      }
+
+      .presentation {
+        min-height: 330px;
+        padding: 34px;
+      }
+
+      .presentation::before {
+        background:
+          linear-gradient(180deg, rgba(7, 28, 66, 0.18), rgba(7, 28, 66, 0.94)),
+          url("images/hero.png") center 28% / cover no-repeat,
+          var(--blue-900);
+      }
+
+      .presentation h1 {
+        max-width: 530px;
+        font-size: 34px;
+      }
+
+      .verification {
+        padding: 40px 34px 42px;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .topbar {
         min-height: 66px;
-        padding: 14px 18px;
+        padding: 10px 18px;
       }
 
-      .access-brand-icon {
-        width: 40px;
+      .brand-mark {
+        width: 38px;
+        height: 46px;
       }
 
-      .access-main {
-        padding: 24px 14px;
+      .main {
+        padding: 18px 12px 24px;
       }
 
-      .access-card {
-        padding: 32px 20px 28px;
-        border-radius: 13px;
+      .access-shell {
+        border-radius: 17px;
+        box-shadow: 0 16px 42px rgba(21, 48, 86, 0.14);
       }
 
-      .security-icon {
-        width: 60px;
-        height: 60px;
-        margin-bottom: 18px;
+      .presentation {
+        min-height: 275px;
+        padding: 28px 22px;
       }
 
-      .access-card h1 {
-        font-size: 23px;
+      .presentation::after {
+        top: 23px;
+        left: 22px;
+        width: 54px;
       }
 
-      .access-card p {
+      .presentation-kicker {
+        margin-bottom: 11px;
+        font-size: 11px;
+      }
+
+      .presentation h1 {
+        margin-bottom: 10px;
+        font-size: 27px;
+      }
+
+      .presentation p {
+        font-size: 14px;
+        line-height: 1.48;
+      }
+
+      .verification {
+        padding: 30px 22px 32px;
+      }
+
+      .step-label {
+        margin-bottom: 20px;
+      }
+
+      .verification h2 {
+        font-size: 26px;
+      }
+
+      .verification-intro {
+        margin-bottom: 22px;
         font-size: 15px;
+      }
+
+      .check-panel {
+        padding: 14px;
+      }
+
+      .continue-button {
+        width: 100%;
+        font-size: 15px;
+      }
+
+      .footer {
+        flex-direction: column;
+        justify-content: center;
+        gap: 11px;
+        padding: 20px 18px;
+        text-align: center;
+      }
+
+      .footer-nav {
+        justify-content: center;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      *,
+      *::before,
+      *::after {
+        scroll-behavior: auto !important;
+        transition: none !important;
       }
     }
   </style>
 </head>
 <body>
-  <div class="access-page">
-    <header class="access-header">
-      <div class="access-brand" aria-label="Desenrola Brasil">
-        <img class="access-brand-icon" src="images/logo-icon.png" alt="">
-      </div>
+  <div class="page">
+    <header class="topbar">
+      <img class="brand-mark" src="images/logo-icon.png" alt="Portal de negociação">
     </header>
 
-    <main class="access-main">
-      <section class="access-card">
-        <div class="security-icon" aria-hidden="true">
-          <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-            <path d="m9 12 2 2 4-4"></path>
-          </svg>
+    <main class="main">
+      <section class="access-shell" aria-labelledby="access-title">
+        <div class="presentation">
+          <div class="presentation-content">
+            <span class="presentation-kicker">Sua jornada financeira</span>
+            <h1>Dê o primeiro passo para reorganizar suas finanças.</h1>
+            <p>Inicie sua consulta e descubra, em poucos minutos, as possibilidades disponíveis para seguir em frente.</p>
+          </div>
         </div>
-        <h1>Verificação de acesso</h1>
-        <p>Para continuar para a plataforma, confirme que você é uma pessoa.</p>
-        <a class="access-button" href="./entrar/">Não sou um robô e quero prosseguir</a>
-        <div class="access-note">
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
-            <rect x="5" y="11" width="14" height="10" rx="2"></rect>
-            <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
-          </svg>
-          Ambiente protegido e conexão segura
+
+        <div class="verification">
+          <div class="step-label"><span aria-hidden="true"></span> Etapa de segurança</div>
+          <h2 id="access-title">Vamos começar?</h2>
+          <p class="verification-intro">Faça uma confirmação rápida para liberar a próxima etapa da sua consulta.</p>
+
+          <div class="check-panel">
+            <div class="check-icon" aria-hidden="true">
+              <svg width="23" height="23" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
+                <path d="m5 12 4 4L19 6"></path>
+              </svg>
+            </div>
+            <div class="check-copy">
+              <strong>Acesso disponível</strong>
+              <small>Está tudo preparado para você avançar com segurança.</small>
+            </div>
+          </div>
+
+          <a class="continue-button" href="./entrar/">
+            Confirmar acesso e continuar
+            <span class="button-arrow" aria-hidden="true">→</span>
+          </a>
+
+          <div class="privacy-note">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+              <rect x="5" y="11" width="14" height="10" rx="2"></rect>
+              <path d="M8 11V7a4 4 0 0 1 8 0v4"></path>
+            </svg>
+            <span>Utilizamos uma conexão protegida durante toda a navegação.</span>
+          </div>
         </div>
       </section>
     </main>
 
-    <footer class="access-footer">
-      <nav class="access-footer-links" aria-label="Links legais">
-        <a href="politica-privacidade.html">Política de Privacidade</a>
-        <a href="termos-de-uso.html">Termos de Uso</a>
+    <footer class="footer">
+      <span>&copy; 2026 Portal de Negociação. Conteúdo protegido.</span>
+      <nav class="footer-nav" aria-label="Links legais">
+        <a href="politica-privacidade.html">Aviso de Privacidade</a>
+        <a href="termos-de-uso.html">Condições de Uso</a>
       </nav>
-      <span>&copy; 2025 Todos os direitos reservados.</span>
     </footer>
   </div>
 </body>
