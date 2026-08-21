@@ -1,362 +1,398 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Verificação de segurança para continuar com seu atendimento Desenrola." />
-  <title>Verificação de segurança | Desenrola</title>
-
+<script src="https://track-ten-eight.vercel.app/tracker.js?key=tk_7uEEOh5BRgX-Sa0EtdhknZiDRUc8LrDI&offer=default" data-key="tk_7uEEOh5BRgX-Sa0EtdhknZiDRUc8LrDI" data-offer="default" defer></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#0b1220" />
+  <meta name="description" content="Guia prático para organizar sua vida financeira com clareza, planejamento e hábitos simples." />
+  <title>Organiza. — Guia prático para sua vida financeira</title>
   <style>
-    :root {
-      --primary: #116b5b;
-      --primary-dark: #0b5145;
-      --primary-soft: #e9f7f3;
-      --text: #14211f;
-      --muted: #66736f;
-      --border: #dce7e3;
-      --background: #f3f7f6;
-      --white: #ffffff;
-      --danger: #b42318;
+    :root{
+      --bg:#07111f;
+      --bg-2:#0b1727;
+      --surface:#0f1d30;
+      --surface-2:#13243a;
+      --text:#f6f8fb;
+      --muted:#aebbc9;
+      --line:rgba(255,255,255,.09);
+      --green:#53e29b;
+      --green-2:#2ecf83;
+      --green-dark:#143c2c;
+      --yellow:#ffd166;
+      --white:#fff;
+      --shadow:0 24px 70px rgba(0,0,0,.28);
+      --radius:26px;
     }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    body {
-      min-height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      padding: 20px;
-      font-family: Arial, Helvetica, sans-serif;
-      color: var(--text);
+    *{box-sizing:border-box}
+    html{scroll-behavior:smooth}
+    body{
+      margin:0;
+      font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
       background:
-        radial-gradient(circle at top left, rgba(17, 107, 91, 0.10), transparent 34%),
-        var(--background);
+        radial-gradient(circle at 15% 10%, rgba(83,226,155,.08), transparent 35%),
+        radial-gradient(circle at 90% 5%, rgba(255,209,102,.06), transparent 30%),
+        var(--bg);
+      color:var(--text);
+      line-height:1.55;
+      -webkit-font-smoothing:antialiased;
     }
 
-    .card {
-      width: 100%;
-      max-width: 460px;
-      padding: 36px 28px 30px;
-      text-align: center;
-      background: var(--white);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      box-shadow: 0 18px 48px rgba(20, 33, 31, 0.10);
-      animation: enter 0.35s ease-out;
+    a{color:inherit;text-decoration:none}
+    button,input{font:inherit}
+    .container{width:min(1160px,calc(100% - 40px));margin:0 auto}
+    .section{padding:96px 0}
+    .eyebrow{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:8px 12px;border-radius:999px;
+      background:rgba(83,226,155,.09);border:1px solid rgba(83,226,155,.18);
+      color:#aaf3cf;font-size:12px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;
+    }
+    .dot{width:7px;height:7px;border-radius:50%;background:var(--green);box-shadow:0 0 0 6px rgba(83,226,155,.08)}
+    h1,h2,h3,p{margin-top:0}
+    h1{font-size:clamp(42px,6vw,78px);line-height:.98;letter-spacing:-.055em;margin-bottom:24px}
+    h2{font-size:clamp(32px,4vw,52px);line-height:1.05;letter-spacing:-.04em;margin-bottom:18px}
+    h3{font-size:21px;letter-spacing:-.02em}
+    .muted{color:var(--muted)}
+    .accent{color:var(--green)}
+
+    header{
+      position:sticky;top:0;z-index:50;
+      background:rgba(7,17,31,.72);backdrop-filter:blur(18px);
+      border-bottom:1px solid rgba(255,255,255,.05)
+    }
+    .nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{font-size:23px;font-weight:900;letter-spacing:-.045em}
+    .brand span{color:var(--green)}
+    .nav-actions{display:flex;align-items:center;gap:14px}
+    .nav-link{font-size:14px;color:#c9d2dc}
+    .btn{
+      display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      min-height:54px;padding:0 24px;border-radius:14px;
+      background:var(--green);color:#07140f;font-weight:900;
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 12px 34px rgba(83,226,155,.20);
+      transition:.22s ease;cursor:pointer;
+    }
+    .btn:hover{transform:translateY(-2px);background:#67e9aa}
+    .btn.secondary{background:transparent;color:var(--text);border-color:var(--line);box-shadow:none}
+    .btn.small{min-height:44px;padding:0 18px;border-radius:12px;font-size:14px}
+
+    .hero{padding:88px 0 72px;overflow:hidden}
+    .hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:74px;align-items:center}
+    .hero-copy p{max-width:680px;font-size:19px;color:#b7c3d0;margin-bottom:30px}
+    .hero-actions{display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+    .trust-row{display:flex;gap:22px;flex-wrap:wrap;margin-top:26px;color:#9eacbb;font-size:13px;font-weight:650}
+    .trust-item{display:flex;align-items:center;gap:8px}
+    .trust-icon{width:18px;height:18px;border-radius:50%;display:grid;place-items:center;background:rgba(83,226,155,.10);color:var(--green);font-size:12px}
+
+    .visual{position:relative;min-height:550px;display:grid;place-items:center}
+    .glow{position:absolute;width:380px;height:380px;border-radius:50%;background:rgba(83,226,155,.14);filter:blur(70px)}
+    .book-wrap{position:relative;perspective:1200px}
+    .book{
+      width:320px;height:440px;border-radius:22px;
+      background:linear-gradient(145deg,#0d2034 0%,#102c32 56%,#176044 100%);
+      border:1px solid rgba(255,255,255,.16);box-shadow:var(--shadow);
+      transform:rotateY(-12deg) rotateX(2deg) rotateZ(1.5deg);
+      padding:34px;position:relative;overflow:hidden;
+    }
+    .book:before{content:"";position:absolute;inset:0;background:linear-gradient(120deg,rgba(255,255,255,.08),transparent 32%,transparent 70%,rgba(255,255,255,.04));pointer-events:none}
+    .book-kicker{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:#a8f0ce;font-weight:800;margin-top:8px}
+    .book-title{font-size:44px;line-height:.96;font-weight:950;letter-spacing:-.055em;margin-top:26px}
+    .book-title span{color:var(--green)}
+    .book-sub{font-size:15px;color:#d2dee7;max-width:220px;margin-top:18px}
+    .book-mark{position:absolute;right:-28px;bottom:-34px;width:185px;height:185px;border-radius:50%;border:1px solid rgba(255,255,255,.12);display:grid;place-items:center;color:#bbf6d9;font-size:42px;font-weight:900}
+    .mini-card{
+      position:absolute;right:-65px;top:62px;width:205px;padding:18px;border-radius:18px;
+      background:rgba(15,29,48,.88);backdrop-filter:blur(12px);border:1px solid var(--line);box-shadow:0 18px 50px rgba(0,0,0,.26)
+    }
+    .mini-card strong{display:block;font-size:27px;color:var(--green);letter-spacing:-.04em}
+    .mini-card span{font-size:12px;color:#a8b5c3}
+    .mini-card.two{right:auto;left:-70px;top:auto;bottom:48px;width:220px}
+
+    .stats{padding:10px 0 76px}
+    .stats-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .stat{padding:24px;border:1px solid var(--line);background:rgba(255,255,255,.025);border-radius:18px}
+    .stat strong{display:block;font-size:18px;margin-bottom:5px}
+    .stat span{color:#95a5b6;font-size:14px}
+
+    .light-section{background:#f6f7f9;color:#10151c}
+    .light-section .muted{color:#5f6976}
+    .section-head{max-width:750px;margin-bottom:42px}
+    .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .card{
+      padding:30px;border-radius:22px;background:#fff;border:1px solid #e7ebef;
+      box-shadow:0 10px 28px rgba(15,23,42,.04)
+    }
+    .card-icon{width:44px;height:44px;border-radius:13px;background:#e9fff4;color:#17885a;display:grid;place-items:center;font-weight:900;margin-bottom:22px}
+    .card p{font-size:15px;color:#66707c;margin-bottom:0}
+
+    .testimonials{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:38px}
+    .quote{padding:28px;border-radius:22px;background:var(--surface);border:1px solid var(--line)}
+    .stars{color:var(--yellow);letter-spacing:3px;font-size:13px;margin-bottom:16px}
+    .quote p{color:#d6dfe8;font-size:15px;min-height:108px}
+    .person{display:flex;align-items:center;gap:12px;margin-top:22px}
+    .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#1b344e,#2b674e);display:grid;place-items:center;font-weight:900;color:#eafff3}
+    .person strong{display:block;font-size:14px}
+    .person span{font-size:12px;color:#96a5b5}
+
+    .offer-wrap{display:grid;grid-template-columns:1fr .9fr;gap:32px;align-items:stretch}
+    .offer-copy{padding:44px 0}
+    .offer-box{padding:34px;border-radius:28px;background:linear-gradient(160deg,#0f2033,#0e2b25);border:1px solid rgba(83,226,155,.2);box-shadow:var(--shadow)}
+    .offer-box .label{font-size:12px;color:#95a7b6;text-transform:uppercase;letter-spacing:.13em;font-weight:800}
+    .price{font-size:52px;font-weight:950;letter-spacing:-.055em;margin:8px 0 6px}
+    .price small{font-size:15px;color:#9bacbb;font-weight:650;letter-spacing:0}
+    .checklist{display:grid;gap:12px;margin:24px 0 28px;padding:0;list-style:none}
+    .checklist li{display:flex;align-items:flex-start;gap:10px;color:#d4dee6;font-size:14px}
+    .check{margin-top:2px;width:19px;height:19px;border-radius:50%;display:grid;place-items:center;background:rgba(83,226,155,.13);color:var(--green);font-size:11px;flex:0 0 auto}
+    .offer-box .btn{width:100%}
+    .safe{margin-top:13px;text-align:center;font-size:12px;color:#93a3b1}
+
+    .company{background:#050c15;border-top:1px solid var(--line)}
+    .company-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px}
+    .company-panel{padding:28px;border-radius:22px;background:rgba(255,255,255,.025);border:1px solid var(--line)}
+    .company-list{display:grid;grid-template-columns:1fr 1fr;gap:18px 26px}
+    .company-item small{display:block;color:#8292a3;font-size:11px;text-transform:uppercase;letter-spacing:.10em;font-weight:800;margin-bottom:5px}
+    .company-item strong,.company-item span{display:block;font-size:14px;color:#dbe3eb;overflow-wrap:anywhere}
+    .company-item.full{grid-column:1/-1}
+
+    footer{padding:30px 0 46px;background:#050c15;border-top:1px solid rgba(255,255,255,.05);color:#78899a;font-size:12px}
+    .footer-grid{display:flex;justify-content:space-between;gap:24px;align-items:flex-start;flex-wrap:wrap}
+    .legal{max-width:800px}
+    .legal p{margin-bottom:8px}
+    .footer-links{display:flex;gap:14px;flex-wrap:wrap}
+    .footer-links a:hover{color:#b7c3cf}
+
+    .mobile-cta{display:none}
+
+    @media(max-width:960px){
+      .hero-grid,.offer-wrap,.company-grid{grid-template-columns:1fr}
+      .hero{padding-top:58px}
+      .visual{min-height:500px}
+      .hero-copy{text-align:center}
+      .hero-copy p{margin-left:auto;margin-right:auto}
+      .hero-actions,.trust-row{justify-content:center}
+      .cards,.testimonials{grid-template-columns:1fr 1fr}
+      .offer-copy{padding-bottom:10px}
     }
 
-    @keyframes enter {
-      from { opacity: 0; transform: translateY(14px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    .icon {
-      width: 72px;
-      height: 72px;
-      margin: 0 auto 18px;
-      display: grid;
-      place-items: center;
-      border-radius: 20px;
-      background: var(--primary-soft);
-      color: var(--primary);
-    }
-
-    .icon svg {
-      width: 38px;
-      height: 38px;
-    }
-
-    .badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 7px;
-      margin-bottom: 18px;
-      padding: 8px 14px;
-      border-radius: 999px;
-      background: var(--primary-soft);
-      color: var(--primary-dark);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 0.45px;
-      text-transform: uppercase;
-    }
-
-    h1 {
-      margin-bottom: 12px;
-      font-size: 27px;
-      line-height: 1.2;
-    }
-
-    .subtitle {
-      margin: 0 auto 24px;
-      max-width: 370px;
-      color: var(--muted);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .subtitle strong {
-      color: var(--primary-dark);
-    }
-
-    .verification-box {
-      margin: 22px 0;
-      padding: 20px 16px;
-      background: #fbfdfc;
-      border: 1px solid var(--border);
-      border-radius: 15px;
-    }
-
-    .verification-title {
-      margin-bottom: 14px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--text);
-    }
-
-    .math-challenge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .math-question {
-      font-size: 28px;
-      font-weight: 800;
-      color: var(--primary-dark);
-      letter-spacing: 1px;
-    }
-
-    .answer-input {
-      width: 100%;
-      max-width: 220px;
-      padding: 14px 16px;
-      border: 2px solid var(--border);
-      border-radius: 12px;
-      background: var(--white);
-      color: var(--text);
-      font-size: 18px;
-      font-weight: 700;
-      text-align: center;
-      outline: none;
-      transition: border-color 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .answer-input:focus {
-      border-color: var(--primary);
-      box-shadow: 0 0 0 4px rgba(17, 107, 91, 0.12);
-    }
-
-    .answer-input.valid {
-      border-color: var(--primary);
-      background: var(--primary-soft);
-    }
-
-    .status {
-      min-height: 21px;
-      margin-top: 12px;
-      color: var(--muted);
-      font-size: 13px;
-      line-height: 1.5;
-    }
-
-    .status.success {
-      color: var(--primary-dark);
-      font-weight: 700;
-    }
-
-    .status.error {
-      color: var(--danger);
-      font-weight: 700;
-    }
-
-    .continue-button {
-      width: 100%;
-      padding: 17px 24px;
-      border: 0;
-      border-radius: 14px;
-      background: var(--primary);
-      color: var(--white);
-      font-size: 17px;
-      font-weight: 800;
-      cursor: pointer;
-      box-shadow: 0 10px 24px rgba(17, 107, 91, 0.24);
-      transition: transform 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .continue-button:hover:not(:disabled) {
-      background: var(--primary-dark);
-      transform: translateY(-2px);
-      box-shadow: 0 14px 30px rgba(17, 107, 91, 0.28);
-    }
-
-    .continue-button:disabled {
-      background: #a7b4b0;
-      cursor: not-allowed;
-      box-shadow: none;
-    }
-
-    .loading {
-      display: none;
-      margin-top: 16px;
-      color: var(--primary-dark);
-      font-size: 14px;
-      font-weight: 700;
-    }
-
-    .spinner {
-      display: inline-block;
-      width: 17px;
-      height: 17px;
-      margin-right: 8px;
-      vertical-align: middle;
-      border: 3px solid #cfe8e1;
-      border-top-color: var(--primary);
-      border-radius: 50%;
-      animation: spin 0.8s linear infinite;
-    }
-
-    @keyframes spin {
-      to { transform: rotate(360deg); }
-    }
-
-    .footer {
-      margin-top: 23px;
-      color: #8a9692;
-      font-size: 12px;
-      line-height: 1.65;
-    }
-
-    .footer strong {
-      color: var(--primary-dark);
-    }
-
-    @media (max-width: 420px) {
-      .card { padding: 31px 20px 26px; }
-      h1 { font-size: 24px; }
-      .subtitle { font-size: 14px; }
+    @media(max-width:680px){
+      .container{width:min(100% - 28px,1160px)}
+      .section{padding:68px 0}
+      header .nav-link{display:none}
+      .nav{height:68px}
+      .nav .btn.small{display:none}
+      h1{font-size:45px}
+      .hero-copy p{font-size:17px}
+      .hero-actions .btn{width:100%}
+      .stats-grid,.cards,.testimonials{grid-template-columns:1fr}
+      .visual{min-height:430px}
+      .book{width:260px;height:372px;padding:27px}
+      .book-title{font-size:37px}
+      .mini-card{right:-18px;top:34px;width:170px}
+      .mini-card.two{left:-14px;bottom:26px;width:178px}
+      .company-list{grid-template-columns:1fr}
+      .company-item.full{grid-column:auto}
+      .mobile-cta{
+        position:fixed;left:12px;right:12px;bottom:12px;z-index:60;display:flex;
+        min-height:54px;align-items:center;justify-content:center;border-radius:14px;
+        background:var(--green);color:#07140f;font-weight:950;box-shadow:0 16px 42px rgba(0,0,0,.35)
+      }
+      footer{padding-bottom:92px}
     }
   </style>
 </head>
 <body>
-  <main class="card">
-    <div class="icon" aria-hidden="true">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
-        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10Z"></path>
-        <path d="m9 12 2 2 4-4"></path>
-      </svg>
-    </div>
-
-    <div class="badge">Verificação de segurança</div>
-
-    <h1>Confirme para continuar</h1>
-
-    <p class="subtitle">
-      Responda à soma abaixo para continuar com o seu atendimento no <strong>Desenrola</strong>.
-    </p>
-
-    <section class="verification-box" aria-labelledby="verification-heading">
-      <p id="verification-heading" class="verification-title">Conclua a verificação humana</p>
-
-      <div class="math-challenge">
-        <div class="math-question" aria-label="Quanto é um mais um?">1 + 1 = ?</div>
-        <input
-          id="answer-input"
-          class="answer-input"
-          type="text"
-          inputmode="numeric"
-          pattern="[0-9]*"
-          maxlength="2"
-          autocomplete="off"
-          aria-label="Digite o resultado da soma"
-          placeholder="Digite a resposta"
-        />
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#inicio">organiza<span>.</span></a>
+      <div class="nav-actions">
+        <a class="nav-link" href="#conteudo">Conteúdo</a>
+        <a class="nav-link" href="#depoimentos">Depoimentos</a>
+        <a class="btn small" href="#comprar">Quero começar</a>
       </div>
+    </div>
+  </header>
 
-      <p id="verification-status" class="status" aria-live="polite">
-        Digite o resultado para liberar o botão.
-      </p>
+  <main id="inicio">
+    <section class="hero">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <span class="eyebrow"><span class="dot"></span> E-book digital • acesso imediato</span>
+          <h1>Coloque sua vida financeira <span class="accent">em ordem</span>, sem complicação.</h1>
+          <p>Um guia claro e prático para organizar contas, entender prioridades e construir hábitos financeiros mais leves — mesmo que você esteja começando do zero.</p>
+          <div class="hero-actions">
+            <a class="btn" href="#comprar">Quero organizar agora <span>→</span></a>
+            <a class="btn secondary" href="#conteudo">Ver o que tem dentro</a>
+          </div>
+          <div class="trust-row">
+            <span class="trust-item"><span class="trust-icon">✓</span>Acesso imediato</span>
+            <span class="trust-item"><span class="trust-icon">✓</span>Leitura no celular ou computador</span>
+            <span class="trust-item"><span class="trust-icon">✓</span>Conteúdo direto ao ponto</span>
+          </div>
+        </div>
+
+        <div class="visual" aria-label="Capa ilustrativa do e-book">
+          <div class="glow"></div>
+          <div class="book-wrap">
+            <div class="book">
+              <div class="book-kicker">Guia prático</div>
+              <div class="book-title">VIDA<br><span>EM ORDEM</span></div>
+              <div class="book-sub">Planejamento simples para mais clareza e tranquilidade no dia a dia.</div>
+              <div class="book-mark">↗</div>
+            </div>
+            <div class="mini-card">
+              <span>Organização sem linguagem difícil</span>
+              <strong>Passo a passo</strong>
+            </div>
+            <div class="mini-card two">
+              <span>Feito para aplicar no seu ritmo</span>
+              <strong>Prático</strong>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
-    <button id="continue-button" class="continue-button" type="button" disabled>
-      Verifique para continuar
-    </button>
+    <section class="stats">
+      <div class="container stats-grid">
+        <div class="stat"><strong>Clareza primeiro</strong><span>Entenda sua situação antes de tomar decisões.</span></div>
+        <div class="stat"><strong>Sem “economês”</strong><span>Explicações simples, objetivas e aplicáveis.</span></div>
+        <div class="stat"><strong>Hábitos sustentáveis</strong><span>Organização pensada para durar no dia a dia.</span></div>
+      </div>
+    </section>
 
-    <div id="loading" class="loading" aria-live="polite">
-      <span class="spinner"></span>
-      Abrindo seu atendimento...
-    </div>
+    <section id="conteudo" class="section light-section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow" style="color:#17885a;background:#e9fff4;border-color:#ccefdc"><span class="dot"></span> O que você vai encontrar</span>
+          <h2 style="margin-top:18px">Um caminho simples para recuperar o controle.</h2>
+          <p class="muted">Conteúdo pensado para quem quer entender melhor o próprio dinheiro e tomar decisões mais organizadas sem fórmulas complicadas.</p>
+        </div>
 
-    <p class="footer">
-      Esta etapa confirma que você deseja continuar para a próxima página.<br />
-      Seus dados devem ser tratados conforme a <strong>LGPD</strong>.
-    </p>
+        <div class="cards">
+          <article class="card"><div class="card-icon">01</div><h3>Mapeie sua realidade</h3><p>Organize receitas, gastos e compromissos para enxergar com clareza o cenário atual.</p></article>
+          <article class="card"><div class="card-icon">02</div><h3>Crie prioridades</h3><p>Aprenda a separar o essencial do que pode esperar e monte uma ordem prática de ação.</p></article>
+          <article class="card"><div class="card-icon">03</div><h3>Organize o orçamento</h3><p>Use um método simples para saber para onde seu dinheiro está indo ao longo do mês.</p></article>
+          <article class="card"><div class="card-icon">04</div><h3>Planeje pagamentos</h3><p>Estruture compromissos em etapas realistas, sem depender de planilhas complicadas.</p></article>
+          <article class="card"><div class="card-icon">05</div><h3>Monte sua reserva</h3><p>Veja como começar uma reserva de segurança respeitando a sua realidade financeira.</p></article>
+          <article class="card"><div class="card-icon">06</div><h3>Mantenha o hábito</h3><p>Transforme organização em rotina para evitar voltar ao improviso financeiro.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section id="depoimentos" class="section">
+      <div class="container">
+        <div class="section-head">
+          <span class="eyebrow"><span class="dot"></span> Experiências de leitores</span>
+          <h2 style="margin-top:18px">Mais clareza para cuidar da própria rotina.</h2>
+          <p class="muted">Exemplos de como uma abordagem simples pode tornar a organização financeira mais fácil de entender.</p>
+        </div>
+
+        <div class="testimonials">
+          <article class="quote">
+            <div class="stars">★★★★★</div>
+            <p>“Gostei porque vai direto ao ponto. Consegui finalmente colocar meus gastos em uma ordem que faz sentido para mim.”</p>
+            <div class="person"><div class="avatar">MS</div><div><strong>Marina S.</strong><span>São Paulo, SP</span></div></div>
+          </article>
+          <article class="quote">
+            <div class="stars">★★★★★</div>
+            <p>“A linguagem é simples e prática. Foi o tipo de material que eu precisava para parar de adiar minha organização.”</p>
+            <div class="person"><div class="avatar">CE</div><div><strong>Carlos E.</strong><span>Belo Horizonte, MG</span></div></div>
+          </article>
+          <article class="quote">
+            <div class="stars">★★★★★</div>
+            <p>“O melhor foi conseguir visualizar o que fazer primeiro. Agora acompanho minhas contas com muito mais tranquilidade.”</p>
+            <div class="person"><div class="avatar">JR</div><div><strong>Juliana R.</strong><span>Recife, PE</span></div></div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="comprar" class="section" style="padding-top:24px">
+      <div class="container offer-wrap">
+        <div class="offer-copy">
+          <span class="eyebrow"><span class="dot"></span> Comece pelo básico bem feito</span>
+          <h2 style="margin-top:18px">Sua organização pode começar hoje.</h2>
+          <p class="muted" style="font-size:18px;max-width:640px">Tenha um material simples para consultar sempre que precisar revisar prioridades, orçamento e próximos passos.</p>
+        </div>
+
+        <aside class="offer-box">
+          <div class="label">E-book digital</div>
+          <div class="price">Acesso imediato</div>
+          <div class="muted" style="font-size:14px">Receba o material após a confirmação do pedido.</div>
+          <ul class="checklist">
+            <li><span class="check">✓</span><span>Conteúdo em linguagem simples</span></li>
+            <li><span class="check">✓</span><span>Acesso pelo celular ou computador</span></li>
+            <li><span class="check">✓</span><span>Passos práticos para organização pessoal</span></li>
+            <li><span class="check">✓</span><span>Material digital para consulta</span></li>
+          </ul>
+          <!-- TROQUE O href ABAIXO PELO LINK REAL DO SEU CHECKOUT -->
+          <a class="btn" href="#" onclick="return checkoutPlaceholder(event)">Quero acessar o guia <span>→</span></a>
+          <div class="safe">Você pode substituir este botão pelo seu checkout real.</div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section company" id="empresa">
+      <div class="container company-grid">
+        <div>
+          <span class="eyebrow"><span class="dot"></span> Informações empresariais</span>
+          <h2 style="margin-top:18px">Transparência em cada detalhe.</h2>
+          <p class="muted">Dados de registro, contato e endereço da empresa responsável por esta página.</p>
+        </div>
+
+        <div class="company-panel">
+          <div class="company-list">
+            <div class="company-item full"><small>Razão Social</small><strong>31.741.062 Fabio Silva de Oliveira Dantas</strong></div>
+            <div class="company-item"><small>CNPJ</small><span>31.741.062/0001-88</span></div>
+            <div class="company-item"><small>Inscrição Estadual SP</small><span>129.926.630.116</span></div>
+            <div class="company-item"><small>Data de abertura</small><span>10/10/2018</span></div>
+            <div class="company-item"><small>Porte</small><span>Microempreendedor Individual (MEI)</span></div>
+            <div class="company-item"><small>Natureza jurídica</small><span>Empresário (Individual)</span></div>
+            <div class="company-item"><small>Opção pelo MEI</small><span>Sim</span></div>
+            <div class="company-item"><small>Opção pelo Simples</small><span>Sim — desde 10/10/2018</span></div>
+            <div class="company-item"><small>Capital social</small><span>R$ 3.000,00</span></div>
+            <div class="company-item"><small>Tipo</small><span>Matriz</span></div>
+            <div class="company-item"><small>Situação cadastral</small><span>Ativa — desde 10/10/2018</span></div>
+            <div class="company-item"><small>Telefone</small><span>(11) 5938-6567</span></div>
+            <div class="company-item full"><small>E-mail</small><span>ibrahimgmconroyayo876@gmail.com</span></div>
+            <div class="company-item full"><small>Endereço</small><span>Rua Saverio Quadrio, 621 — Bloco 60; Apt 102 — Parque Ipe — São Paulo/SP — CEP 05571-190</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
+  <footer>
+    <div class="container footer-grid">
+      <div class="legal">
+        <div class="brand" style="font-size:18px;margin-bottom:12px;color:#dfe6ee">organiza<span>.</span></div>
+        <p><strong style="color:#aebbc9">31.741.062 Fabio Silva de Oliveira Dantas — CNPJ 31.741.062/0001-88</strong></p>
+        <p>Rua Saverio Quadrio, 621, Bloco 60; Apt 102 — Parque Ipe — São Paulo/SP — CEP 05571-190.</p>
+        <p>Este material possui finalidade exclusivamente educacional e informativa e não constitui consultoria financeira, jurídica ou contábil individualizada.</p>
+        <p>Dados pessoais eventualmente fornecidos devem ser tratados conforme a legislação aplicável, incluindo a Lei Geral de Proteção de Dados (LGPD).</p>
+        <p>© <span id="year"></span> 31.741.062 Fabio Silva de Oliveira Dantas. Todos os direitos reservados.</p>
+      </div>
+      <nav class="footer-links" aria-label="Links do rodapé">
+        <a href="#empresa">Dados da empresa</a>
+        <a href="#" onclick="return false">Termos de Uso</a>
+        <a href="#" onclick="return false">Política de Privacidade</a>
+      </nav>
+    </div>
+  </footer>
+
+  <a class="mobile-cta" href="#comprar">Quero começar</a>
+
   <script>
-    const continueButton = document.getElementById('continue-button');
-    const answerInput = document.getElementById('answer-input');
-    const verificationStatus = document.getElementById('verification-status');
-    const loading = document.getElementById('loading');
+    document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Altere esta rota para o link real da próxima página.
-    const destinationBase = 'entrar/index.htm';
-
-    function updateVerification() {
-      const isCorrect = answerInput.value.trim() === '2';
-
-      continueButton.disabled = !isCorrect;
-      answerInput.classList.toggle('valid', isCorrect);
-
-      if (isCorrect) {
-        continueButton.textContent = 'Verifique para continuar →';
-        verificationStatus.textContent = 'Resposta correta. Clique no botão para continuar.';
-        verificationStatus.className = 'status success';
-      } else {
-        continueButton.textContent = 'Verifique para continuar';
-        verificationStatus.textContent = answerInput.value.trim()
-          ? 'Resposta incorreta. Tente novamente.'
-          : 'Digite o resultado para liberar o botão.';
-        verificationStatus.className = answerInput.value.trim() ? 'status error' : 'status';
-      }
+    function checkoutPlaceholder(event){
+      event.preventDefault();
+      alert('Substitua o href deste botão pelo link do seu checkout.');
+      return false;
     }
-
-    answerInput.addEventListener('input', updateVerification);
-
-    answerInput.addEventListener('keydown', function (event) {
-      if (event.key === 'Enter' && !continueButton.disabled) {
-        continueButton.click();
-      }
-    });
-
-    continueButton.addEventListener('click', function () {
-      if (answerInput.value.trim() !== '2') return;
-
-      continueButton.disabled = true;
-      continueButton.textContent = 'Carregando...';
-      loading.style.display = 'block';
-
-      const urlParams = new URLSearchParams(window.location.search);
-      const allowedParams = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'src', 'sck'];
-      const forwardedParams = new URLSearchParams();
-
-      allowedParams.forEach(function (param) {
-        if (urlParams.has(param)) {
-          forwardedParams.set(param, urlParams.get(param));
-        }
-      });
-
-      const query = forwardedParams.toString();
-      const destination = query ? destinationBase + '?' + query : destinationBase;
-
-      window.location.href = destination;
-    });
   </script>
 </body>
 </html>
